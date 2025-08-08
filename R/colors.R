@@ -13,7 +13,11 @@ harlem_palettes <- list(
   DelaneySelfPortrait = c("#AF6458", "#403233", "#7A9B76", "#F2E5BC", "#1E1D33"),
   JonesLaBaker = c("#AE0E36", "#FCD0A4", "#242628", "#C3BFB7", "#4E4F97"),
   HaydenFetiche = c("#4E443C", "#9B6E4A", "#D9A44C", "#24221D", "#8E8777"),
-  WoodruffAmistad = c("#1A1A1A", "#B5A575", "#717171", "#FFFFFF", "#A39E91")
+  MotleyNightlife = c("#5c1b2b", "#71536d", "#9c4860", "#276d74", "#3d3356"),
+  JonesAscentEthiopia = c("#0a468c", "#203a1d", "#f5d42c", "#69bab1", "#0c77de"),
+  CharlesWhiteSoldier = c("#3f5e68", "#9e3d32", "#f3c442", "#252b2b", "#5b302f"),
+  DouglasSongTowers = c("#925c5c", "#ccc47d", "#fde6a2", "#b16755", "#3d2b1f"),
+  JohnsonGoingChurch = c("#481b15", "#ebc2be", "#f7d400", "#638505", "#1f2f96")
 )
 
 

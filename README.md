@@ -16,10 +16,11 @@ You can install the development version of `harlem` from [GitHub](https://github
 devtools::install_github("sdhutchins/harlem")
 ```
 
-## Example
+## Examples
 
-This is a basic example demonstrating how to apply a harlem palette to a ggplot2 plot:
+Below are sample visualizations with a few of these palettes.
 
+### Example 1: Density Plot Using the "Motley Blues" Palette
 ```r
 # ggplot2 library
 library(ggplot2)
@@ -35,7 +36,49 @@ ggplot(data=diamonds,aes(x=price, group=cut, fill=cut)) +
   scale_fill_manual(values = palette) +
   theme_minimal()
 ```
-![Alternative Text](motley_blues_density.png)
+![Motley Blues](motley_blues_density.png)
+
+### Example 2: Bar Plot Using the "Charles White Soliders" Palette
+
+```r
+# ggplot2 library
+library(ggplot2)
+ 
+# Let's use the diamonds dataset
+data(diamonds)
+head(diamonds)
+
+palette <- harlem_palettes$JonesAscentEthiopia
+ggplot(data=diamonds, aes(x=cut, fill=cut)) + 
+    geom_bar() +
+    scale_fill_manual(values = palette) +
+    theme_minimal() +
+    labs(title="Count of Diamonds by Cut", x="Cut", y="Count")
+```
+![Alternative Text](jones_ascent_ethiopia.png)
+
+### Example 3: Box Plot Using the "Charles White Soldier" Palette
+
+```r
+set.seed(123)
+df <- data.frame(
+    dose = factor(rep(1:5, each = 10)),
+    len = c(rnorm(10, 10, 3),
+            rnorm(10, 14, 3),
+            rnorm(10, 18, 3),
+            rnorm(10, 22, 3),
+            rnorm(10, 26, 3))
+)
+
+# Box plot
+ggplot(df, aes(x = dose, y = len, fill = dose)) +
+    geom_boxplot(color = "black") +
+    scale_fill_manual(values = harlem_palettes$CharlesWhiteSoldier) +
+    theme_minimal(base_size = 14) +
+    theme(legend.position = "top") +
+    labs(x = "dose", y = "len")
+```
+![Alternative Text](charles_white_soldier.png)
 
 ## List of Palettes
 
