@@ -5,6 +5,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
+The goal of `harlem` is to provide a collection of color palettes inspired by iconic works from Harlem Renaissance artists. These palettes are designed to bring artistic flair to your data visualizations in R.
+
 Each palette draws from the colors of a specific artwork:
 
 - **Jacob Lawrence** – *Street Scene* (`LawrenceStreetScene`)  

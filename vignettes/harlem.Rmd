@@ -1,0 +1,76 @@
+---
+title: "Using harlem color palettes"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using harlem color palettes}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 4.5,
+  dpi = 96,
+  message = FALSE,
+  warning = FALSE
+)
+
+library(harlem)
+library(ggplot2)
+
+set.seed(1)
+data(diamonds, package = "ggplot2")
+```
+
+The `harlem` package provides color palettes inspired by Harlem Renaissance artworks. Use them in base R plots or with `ggplot2`.
+
+### Available palettes
+
+```{r}
+names(harlem_palettes)
+```
+
+### Preview a palette
+
+```{r}
+print_palette(harlem_palettes$MotleyBlues)
+```
+
+### Discrete example (bar plot)
+
+```{r}
+# Use a discrete palette directly
+palette <- harlem_palettes$JonesAscentEthiopia
+
+# Diamonds bar chart colored by cut
+p1 <- ggplot(diamonds, aes(x = cut, fill = cut)) +
+  geom_bar() +
+  scale_fill_manual(values = palette) +
+  theme_minimal() +
+  labs(title = "Count of diamonds by cut",
+       x = "Cut", y = "Count")
+
+p1
+```
+
+### Continuous example (scatter plot)
+
+```{r}
+# Build a continuous gradient from a palette
+continuous_cols <- harlem_palette("MotleyBlues", n = 256, type = "continuous")
+
+# Use a scatter plot to demonstrate continuous color scale
+subset_diamonds <- diamonds[sample.int(nrow(diamonds), 2000), ]
+
+p2 <- ggplot(subset_diamonds, aes(x = carat, y = price, color = price)) +
+  geom_point(alpha = 0.6, size = 1.2) +
+  scale_color_gradientn(colors = continuous_cols) +
+  theme_minimal() +
+  labs(title = "Scatter with continuous palette",
+       x = "Carat", y = "Price", color = "Price")
+
+p2
+``` 
