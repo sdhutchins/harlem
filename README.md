@@ -5,7 +5,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-The goal of `harlem` is to provide a collection of color palettes inspired by iconic works from Harlem Renaissance artists. These palettes are designed to bring artistic flair to your data visualizations in R.
+Each palette draws from the colors of a specific artwork:
+
+- **Jacob Lawrence** – *Street Scene* (`LawrenceStreetScene`)  
+- **Romare Bearden** – *Conjur Woman* (`BeardenConjurWoman`), *Collage* (`BeardenCollage` if included)  
+- **Aaron Douglas** – *Aspects of Negro Life* (`DouglasAspects`), *Song of the Towers* (`DouglasSongTowers`)  
+- **Archibald Motley** – *Blues* (`MotleyBlues`), *Nightlife* (`MotleyNightlife`)  
+- **William H. Johnson** – *Harlem* (`JohnsonHarlem`), *Going to Church* (`JohnsonGoingChurch`), *Ascent of Ethiopia* (`JonesAscentEthiopia`)  
+- **Loïs Mailou Jones** – *La Baker* (`JonesLaBaker`), *Ascent of Ethiopia* (`JonesAscentEthiopia`)  
+- **Sargent Claude Johnson** – *Octoroon Girl* (`SargentOctoroonGirl`)  
+- **Beauford Delaney** – *Self-Portrait* (`DelaneySelfPortrait`)  
+- **Palmer Hayden** – *Fetiche et Fleurs* (`HaydenFetiche`)  
+- **Charles White** – *Soldier* (`CharlesWhiteSoldier`)  
+- **Hale Woodruff** – *The Amistad Mutiny* (`WoodruffAmistad`)
+
+By using these palettes, you can incorporate the vibrancy, contrast, and cultural context of Harlem Renaissance art directly into your ggplot2 charts or other R visualizations.
 
 ## Installation
 

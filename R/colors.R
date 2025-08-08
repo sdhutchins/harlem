@@ -4,20 +4,22 @@
 #'
 #' @export
 harlem_palettes <- list(
-  LawrenceStreetScene = c("#D7AA50", "#C13E20", "#3E5D33", "#E6E6E6", "#282828"),
-  BeardenConjurWoman = c("#573D29", "#AAB7C4", "#363030", "#98867C", "#CDB7A0"),
-  DouglasAspects = c("#0D0D0D", "#FFFFFF", "#B5BDC4", "#919191", "#4A4A4A"),
-  MotleyBlues = c("#1F231C", "#BD8955", "#461303", "#6D1A08", "#8F1307"),
-  JohnsonHarlem = c("#6246B3", "#F3E1D1", "#2C2C2C", "#A78550", "#ECECEC"),
+  LawrenceStreetScene = c("#C13E20", "#3E5D33", "#D7AA50", "#282828", "#E6E6E6"),
+  BeardenConjurWoman = c("#6da0c5", "#778889", "#af8a67", "#ffe1a4", "#4b3328"),
+  DouglasAspects = c("#0D0D0D", "#4A4A4A", "#919191", "#B5BDC4", "#FFFFFF"),
+  MotleyBlues = c("#8F1307", "#1F231C", "#BD8955", "#461303", "#6D1A08"),
+  JohnsonHarlem = c("#6246B3", "#A78550", "#2C2C2C", "#F3E1D1", "#ECECEC"),
   SargentOctoroonGirl = c("#965341", "#D5B185", "#383838", "#A2A2A2", "#D1C4BE"),
-  DelaneySelfPortrait = c("#AF6458", "#403233", "#7A9B76", "#F2E5BC", "#1E1D33"),
-  JonesLaBaker = c("#AE0E36", "#FCD0A4", "#242628", "#C3BFB7", "#4E4F97"),
+  DelaneySelfPortrait = c("#AF6458", "#1E1D33", "#F2E5BC", "#7A9B76", "#403233"),
+  JonesLaBaker = c("#AE0E36", "#4E4F97", "#FCD0A4", "#242628", "#C3BFB7"),
   HaydenFetiche = c("#4E443C", "#9B6E4A", "#D9A44C", "#24221D", "#8E8777"),
   MotleyNightlife = c("#5c1b2b", "#71536d", "#9c4860", "#276d74", "#3d3356"),
-  JonesAscentEthiopia = c("#0a468c", "#203a1d", "#f5d42c", "#69bab1", "#0c77de"),
+  JonesAscentEthiopia = c("#0a468c", "#0c77de", "#69bab1", "#f5d42c", "#203a1d"),
   CharlesWhiteSoldier = c("#3f5e68", "#9e3d32", "#f3c442", "#252b2b", "#5b302f"),
   DouglasSongTowers = c("#925c5c", "#ccc47d", "#fde6a2", "#b16755", "#3d2b1f"),
-  JohnsonGoingChurch = c("#481b15", "#ebc2be", "#f7d400", "#638505", "#1f2f96")
+  JohnsonGoingChurch = c("#F7D400", "#1F2F96", "#EBC2BE", "#481B15", "#638505"),
+  LoisMailouJones = c("#C92C2C", "#003F3B", "#F4C1A0", "#B77556", "#462C21"),
+  WoodruffAmistad = c("#1A1A1A", "#FFFFFF", "#B5A575", "#717171", "#A39E91")
 )
 
 
