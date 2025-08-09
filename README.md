@@ -86,7 +86,7 @@ ggplot(subset_diamonds, aes(x = carat, y = price, color = price)) +
        x = "Carat", y = "Price", color = "Price")
 ```
 
-![](figures/example2-1.png)<!-- -->
+![](figures/example2-1.png)
 
 ### Example 3: Box Plot Using the `CharlesWhiteSoldier` Palette
 
