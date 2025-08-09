@@ -4,6 +4,6 @@ template:
   bslib:
     bootswatch: flatly
     pkgdown-nav-height: 100px
-    base_font: {google: "Roboto"}
+    base_font: {google: "Roboto Condensed"}
     heading_font: {google: "Roboto Slab"}
     code_font: {google: "JetBrains Mono"}

@@ -1,46 +1,47 @@
+---
+output:
+  github_document: default
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "figures/",
+  fig.height = 4
+)
+```
 
 # harlem
 
 <!-- badges: start -->
-
-[![R build
-status](https://github.com/sdhutchins/harlem/workflows/R-CMD-check/badge.svg)](https://github.com/sdhutchins/harlem/actions)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![R build status](https://github.com/sdhutchins/harlem/workflows/R-CMD-check/badge.svg)](https://github.com/sdhutchins/harlem/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <!-- badges: end -->
 
-The goal of `harlem` is to provide a collection of color palettes
-inspired by iconic works from Harlem Renaissance artists. These palettes
-are designed to bring artistic flair to your data visualizations in R.
+The goal of `harlem` is to provide a collection of color palettes inspired by iconic works from Harlem Renaissance artists. These palettes are designed to bring artistic flair to your data visualizations in R.
 
 Each palette draws from the colors of a specific artwork:
 
 - **Jacob Lawrence** – *Street Scene* (`LawrenceStreetScene`)  
-- **Romare Bearden** – *Conjur Woman* (`BeardenConjurWoman`), *Collage*
-  (`BeardenCollage` if included)  
-- **Aaron Douglas** – *Aspects of Negro Life* (`DouglasAspects`), *Song
-  of the Towers* (`DouglasSongTowers`)  
-- **Archibald Motley** – *Blues* (`MotleyBlues`), *Nightlife*
-  (`MotleyNightlife`)  
-- **William H. Johnson** – *Harlem* (`JohnsonHarlem`), *Going to Church*
-  (`JohnsonGoingChurch`), *Ascent of Ethiopia* (`JonesAscentEthiopia`)  
-- **Loïs Mailou Jones** – *La Baker* (`JonesLaBaker`), *Ascent of
-  Ethiopia* (`JonesAscentEthiopia`)  
+- **Romare Bearden** – *Conjur Woman* (`BeardenConjurWoman`), *Collage* (`BeardenCollage` if included)  
+- **Aaron Douglas** – *Aspects of Negro Life* (`DouglasAspects`), *Song of the Towers* (`DouglasSongTowers`)  
+- **Archibald Motley** – *Blues* (`MotleyBlues`), *Nightlife* (`MotleyNightlife`)  
+- **William H. Johnson** – *Harlem* (`JohnsonHarlem`), *Going to Church* (`JohnsonGoingChurch`), *Ascent of Ethiopia* (`JonesAscentEthiopia`)  
+- **Loïs Mailou Jones** – *La Baker* (`JonesLaBaker`), *Ascent of Ethiopia* (`JonesAscentEthiopia`)  
 - **Sargent Claude Johnson** – *Octoroon Girl* (`SargentOctoroonGirl`)  
 - **Beauford Delaney** – *Self-Portrait* (`DelaneySelfPortrait`)  
 - **Palmer Hayden** – *Fetiche et Fleurs* (`HaydenFetiche`)  
 - **Charles White** – *Soldier* (`CharlesWhiteSoldier`)  
 - **Hale Woodruff** – *The Amistad Mutiny* (`WoodruffAmistad`)
 
-By using these palettes, you can incorporate the vibrancy, contrast, and
-cultural context of Harlem Renaissance art directly into your ggplot2
-charts or other R visualizations.
+By using these palettes, you can incorporate the vibrancy, contrast, and cultural context of Harlem Renaissance art directly into your ggplot2 charts or other R visualizations.
 
 ## Installation
 
 You can install the development version of `harlem` from GitHub Wwith:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("sdhutchins/harlem")
 ```
@@ -51,7 +52,7 @@ Below are sample visualizations with a few of these palettes.
 
 ### Example 1: Bar Plot Using the `JonesAscentEthiopia` Palette
 
-``` r
+```{r example1}
 library(harlem)
 library(ggplot2)
 
@@ -66,11 +67,9 @@ ggplot(diamonds, aes(x = cut, fill = cut)) +
          x = "Cut", y = "Count")
 ```
 
-![](figures/example1-1.png)<!-- -->
-
 ### Example 2: Scatter Plot Using the `MotleyBlues` Palette
 
-``` r
+```{r example2}
 # Build a continuous gradient from a palette
 continuous_cols <- harlem_palette("MotleyBlues", n = 256, type = "continuous")
 
@@ -84,13 +83,12 @@ ggplot(subset_diamonds, aes(x = carat, y = price, color = price)) +
   theme_minimal() +
   labs(title = "Scatter with Motley Blues palette",
        x = "Carat", y = "Price", color = "Price")
-```
 
-![](figures/example2-1.png)<!-- -->
+```
 
 ### Example 3: Box Plot Using the `CharlesWhiteSoldier` Palette
 
-``` r
+```{r example3}
 set.seed(123)
 df <- data.frame(
     dose = factor(rep(1:5, each = 10)),
@@ -112,73 +110,48 @@ p3 <- ggplot(df, aes(x = dose, y = len, fill = dose)) +
 p3
 ```
 
-![](figures/example3-1.png)<!-- -->
-
 ## List of Available Palettes
 
 You can view the list of available palettes with:
 
-``` r
+```{r palettes}
 names(harlem_palettes)
-#>  [1] "LawrenceStreetScene" "BeardenConjurWoman"  "DouglasAspects"     
-#>  [4] "MotleyBlues"         "JohnsonHarlem"       "SargentOctoroonGirl"
-#>  [7] "DelaneySelfPortrait" "JonesLaBaker"        "HaydenFetiche"      
-#> [10] "MotleyNightlife"     "JonesAscentEthiopia" "CharlesWhiteSoldier"
-#> [13] "DouglasSongTowers"   "JohnsonGoingChurch"  "LoisMailouJones"    
-#> [16] "WoodruffAmistad"
 ```
 
 ## Preview Palettes
 
-``` r
+```{r preview}
 # Preview a few palettes
 print_palette(harlem_palettes$MotleyNightlife)
 ```
 
-![](figures/preview-1.png)<!-- -->
-
-``` r
+```{r preview2}
 print_palette(harlem_palettes$DouglasAspects)
 ```
 
-![](figures/preview2-1.png)<!-- -->
-
-``` r
+```{r preview3}
 print_palette(harlem_palettes$LawrenceStreetScene)
 ```
-
-![](figures/preview3-1.png)<!-- -->
 
 ## Usage
 
 The package provides two main functions:
 
 - `harlem_palettes`: A list containing all available palettes
-- `harlem_palette()`: A function to generate palettes with options for
-  discrete or continuous output
+- `harlem_palette()`: A function to generate palettes with options for discrete or continuous output
 - `print_palette()`: A function to visualize palettes
 
-``` r
+```{r usage}
 # Get a specific palette
 harlem_palettes$MotleyBlues
-#> [1] "#8F1307" "#1F231C" "#BD8955" "#461303" "#6D1A08"
 
 # Generate a continuous palette
 harlem_palette("MotleyBlues", n = 10, type = "continuous")
-#>  [1] "#8F1307" "#5D1A10" "#2B2119" "#53452E" "#997248" "#A26E42" "#6D3A1E"
-#>  [8] "#4A1303" "#5B1605" "#6D1A08"
-#> attr(,"class")
-#> [1] "palette"
-#> attr(,"name")
-#> [1] "MotleyBlues"
 
 # Print a palette
 print_palette(harlem_palettes$LawrenceStreetScene)
 ```
 
-![](figures/usage-1.png)<!-- -->
-
 ## Contributing
 
-If you would like to contribute to this package, please see the
-CONTRIBUTING.md guidelines.
+If you would like to contribute to this package, please see the CONTRIBUTING.md guidelines. 
