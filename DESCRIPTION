@@ -13,7 +13,8 @@ Suggests:
     knitr,
     rmarkdown,
     ggplot2,
-    pkgdown
+    pkgdown,
+    sessioninfo
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 URL: http://www.shauritahutchins.com/harlem/
