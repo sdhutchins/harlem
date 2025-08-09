@@ -7,7 +7,7 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "figures/",
+  fig.path = "man/figures/",
   fig.height = 4
 )
 ```
@@ -126,11 +126,11 @@ print_palette(harlem_palettes$MotleyNightlife)
 ```
 
 ```{r preview2}
-print_palette(harlem_palettes$DouglasAspects)
+print_palette(harlem_palettes$LoisMailouJones)
 ```
 
 ```{r preview3}
-print_palette(harlem_palettes$LawrenceStreetScene)
+print_palette(harlem_palettes$BeardenConjurWoman)
 ```
 
 ## Usage

@@ -66,7 +66,7 @@ ggplot(diamonds, aes(x = cut, fill = cut)) +
          x = "Cut", y = "Count")
 ```
 
-![](figures/example1-1.png)<!-- -->
+![](man/figures/example1-1.png)
 
 ### Example 2: Scatter Plot Using the `MotleyBlues` Palette
 
@@ -86,7 +86,7 @@ ggplot(subset_diamonds, aes(x = carat, y = price, color = price)) +
        x = "Carat", y = "Price", color = "Price")
 ```
 
-![](figures/example2-1.png)
+![](man/figures/example2-1.png)
 
 ### Example 3: Box Plot Using the `CharlesWhiteSoldier` Palette
 
@@ -112,7 +112,7 @@ p3 <- ggplot(df, aes(x = dose, y = len, fill = dose)) +
 p3
 ```
 
-![](figures/example3-1.png)<!-- -->
+![](man/figures/example3-1.png)
 
 ## List of Available Palettes
 
@@ -135,19 +135,19 @@ names(harlem_palettes)
 print_palette(harlem_palettes$MotleyNightlife)
 ```
 
-![](figures/preview-1.png)<!-- -->
+![](man/figures/preview-1.png)
 
 ``` r
-print_palette(harlem_palettes$DouglasAspects)
+print_palette(harlem_palettes$LoisMailouJones)
 ```
 
-![](figures/preview2-1.png)<!-- -->
+![](man/figures/preview2-1.png)
 
 ``` r
-print_palette(harlem_palettes$LawrenceStreetScene)
+print_palette(harlem_palettes$BeardenConjurWoman)
 ```
 
-![](figures/preview3-1.png)<!-- -->
+![](man/figures/preview3-1.png)
 
 ## Usage
 
@@ -176,7 +176,7 @@ harlem_palette("MotleyBlues", n = 10, type = "continuous")
 print_palette(harlem_palettes$LawrenceStreetScene)
 ```
 
-![](figures/usage-1.png)<!-- -->
+![](man/figures/usage-1.png)
 
 ## Contributing
 
