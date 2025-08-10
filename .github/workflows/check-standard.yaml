@@ -57,7 +57,7 @@ jobs:
             print(installed.packages()[, "Package"])
             stop("Failed to install rcmdcheck")
           }
-          cat("rcmdcheck version:", packageVersion("rcmdcheck"), "\n")
+          cat("rcmdcheck version:", as.character(packageVersion("rcmdcheck")), "\n")
         shell: Rscript {0}
 
       - name: Check
