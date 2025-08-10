@@ -42,6 +42,8 @@ jobs:
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
           while read -r cmd
           do
             eval sudo $cmd
@@ -51,7 +53,13 @@ jobs:
         run: |
           install.packages("remotes")
           remotes::install_deps(dependencies = TRUE)
-          install.packages("rcmdcheck")
+          # Try installing rcmdcheck with different approaches for Ubuntu devel
+          tryCatch({
+            install.packages("rcmdcheck")
+          }, error = function(e) {
+            cat("Failed to install rcmdcheck from CRAN, trying from GitHub...\n")
+            remotes::install_github("r-lib/rcmdcheck")
+          })
           if (!requireNamespace("rcmdcheck", quietly = TRUE)) {
             cat("Available packages:\n")
             print(installed.packages()[, "Package"])
