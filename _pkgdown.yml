@@ -1,9 +1,56 @@
 url: http://www.shauritahutchins.com/harlem/
+navbar:
+  bg: primary
+  type: dark
+  structure:
+    left: [intro, reference, articles]
+    right: [search, github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/sdhutchins/harlem
+      aria-label: GitHub
+
+home:
+  title: Harlem
+  description: Color palettes inspired by Harlem Renaissance artists.
+  links:
+  - text: CI builds
+    href: https://github.com/sdhutchins/harlem/actions
+  - text: Get started article
+    href: articles/harlem.html
+  - text: Reference index
+    href: reference/index.html
+  sidebar:
+    structure: [links, license, citation, authors, dev]
+
+authors:
+  shaurita hutchins:
+    href: https://www.shauritahutchins.com/
+
+reference:
+- title: Palettes
+  contents:
+  - harlem_palettes
+  - harlem_palette
+  - print_palette
+  - harlem
+
+articles:
+- title: Get started
+  navbar: ~
+  contents:
+  - harlem
+
+news:
+  cran_dates: false
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
+
 template:
-  bootstrap: 5
   bslib:
-    bootswatch: flatly
-    pkgdown-nav-height: 100px
-    base_font: {google: "Roboto Condensed"}
-    heading_font: {google: "Roboto Slab"}
-    code_font: {google: "JetBrains Mono"}
+    version: 5
+    brand: _brand.yml
