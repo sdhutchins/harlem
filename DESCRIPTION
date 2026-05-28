@@ -25,6 +25,8 @@ Suggests:
     sessioninfo
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Config/Needs/website:
+    brand.yml
 URL: http://www.shauritahutchins.com/harlem/
     https://github.com/sdhutchins/harlem
 BugReports: https://github.com/sdhutchins/harlem/issues
