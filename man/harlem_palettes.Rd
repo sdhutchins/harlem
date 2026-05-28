@@ -5,7 +5,7 @@
 \alias{harlem_palettes}
 \title{A list of Harlem Renaissance-inspired palettes}
 \format{
-An object of class \code{list} of length 10.
+An object of class \code{list} of length 16.
 }
 \usage{
 harlem_palettes

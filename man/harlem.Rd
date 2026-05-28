@@ -2,6 +2,7 @@
 % Please edit documentation in R/harlem.R
 \docType{package}
 \name{harlem}
+\alias{harlem-package}
 \alias{harlem}
 \title{harlem}
 \description{
@@ -9,4 +10,15 @@ A collection of color palettes inspired by iconic works from Harlem Renaissance 
 }
 \details{
 A collection of color palettes inspired by Harlem Renaissance artists and their pieces of art.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{http://www.shauritahutchins.com/harlem/}
+}
+
+}
+\author{
+\strong{Maintainer}: Shaurita Hutchins \email{shaurita.d.hutchins@gmail.com}
+
 }

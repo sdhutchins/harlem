@@ -2,12 +2,20 @@ Package: harlem
 Title: Color Palettes Inspired by Harlem Renaissance Artists
 Version: 0.0.1
 Authors@R: 
-    person("Shaurita", "Hutchins", email = "shaurita.d.hutchins@gmail.com", role = c("aut", "cre"))
+    person(
+        "Shaurita", "Hutchins",
+        email = "shaurita.d.hutchins@gmail.com",
+        role = c("aut", "cre"),
+        comment = c(
+            ORCID = "0000-0002-7687-0059",
+            "Computational biologist and package author"
+        )
+    )
 Description: The 'harlem' package offers a collection of color palettes inspired by iconic works from Harlem Renaissance artists. These palettes can be easily integrated into data visualizations in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.3
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
@@ -18,3 +26,5 @@ Suggests:
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 URL: http://www.shauritahutchins.com/harlem/
+    https://github.com/sdhutchins/harlem
+BugReports: https://github.com/sdhutchins/harlem/issues
