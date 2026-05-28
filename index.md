@@ -32,6 +32,7 @@ charts or other R visualizations.
 You can install the development version of `harlem` from GitHub Wwith:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("sdhutchins/harlem")
 ```
@@ -43,6 +44,7 @@ Below are sample visualizations with a few of these palettes.
 ### Example 1: Bar Plot Using the `JonesAscentEthiopia` Palette
 
 ``` r
+
 library(harlem)
 library(ggplot2)
 
@@ -62,6 +64,7 @@ ggplot(diamonds, aes(x = cut, fill = cut)) +
 ### Example 2: Scatter Plot Using the `MotleyBlues` Palette
 
 ``` r
+
 # Build a continuous gradient from a palette
 continuous_cols <- harlem_palette("MotleyBlues", n = 256, type = "continuous")
 
@@ -82,6 +85,7 @@ ggplot(subset_diamonds, aes(x = carat, y = price, color = price)) +
 ### Example 3: Box Plot Using the `CharlesWhiteSoldier` Palette
 
 ``` r
+
 set.seed(123)
 df <- data.frame(
     dose = factor(rep(1:5, each = 10)),
@@ -110,6 +114,7 @@ p3
 You can view the list of available palettes with:
 
 ``` r
+
 names(harlem_palettes)
 #>  [1] "LawrenceStreetScene" "BeardenConjurWoman"  "DouglasAspects"     
 #>  [4] "MotleyBlues"         "JohnsonHarlem"       "SargentOctoroonGirl"
@@ -122,6 +127,7 @@ names(harlem_palettes)
 ## Preview Palettes
 
 ``` r
+
 # Preview a few palettes
 print_palette(harlem_palettes$MotleyNightlife)
 ```
@@ -129,12 +135,14 @@ print_palette(harlem_palettes$MotleyNightlife)
 ![](reference/figures/preview-1.png)
 
 ``` r
+
 print_palette(harlem_palettes$LoisMailouJones)
 ```
 
 ![](reference/figures/preview2-1.png)
 
 ``` r
+
 print_palette(harlem_palettes$BeardenConjurWoman)
 ```
 
@@ -152,6 +160,7 @@ The package provides two main functions:
   A function to visualize palettes
 
 ``` r
+
 # Get a specific palette
 harlem_palettes$MotleyBlues
 #> [1] "#8F1307" "#1F231C" "#BD8955" "#461303" "#6D1A08"

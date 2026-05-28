@@ -6,6 +6,7 @@ Renaissance artworks. Use them in base R plots or with `ggplot2`.
 ### Available palettes
 
 ``` r
+
 names(harlem_palettes)
 #>  [1] "LawrenceStreetScene" "BeardenConjurWoman"  "DouglasAspects"     
 #>  [4] "MotleyBlues"         "JohnsonHarlem"       "SargentOctoroonGirl"
@@ -18,6 +19,7 @@ names(harlem_palettes)
 ### Preview a palette
 
 ``` r
+
 print_palette(harlem_palettes$MotleyBlues)
 ```
 
@@ -26,6 +28,7 @@ print_palette(harlem_palettes$MotleyBlues)
 ### Discrete example (bar plot)
 
 ``` r
+
 # Use a discrete palette directly
 palette <- harlem_palettes$JonesAscentEthiopia
 
@@ -45,6 +48,7 @@ p1
 ### Continuous example (scatter plot)
 
 ``` r
+
 # Build a continuous gradient from a palette
 continuous_cols <- harlem_palette("MotleyBlues", n = 256, type = "continuous")
 

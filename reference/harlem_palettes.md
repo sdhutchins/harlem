@@ -10,4 +10,4 @@ harlem_palettes
 
 ## Format
 
-An object of class `list` of length 10.
+An object of class `list` of length 16.
