@@ -39,46 +39,10 @@ jobs:
       - uses: r-lib/actions/setup-tinytex@v2
         if: needs.build-vignettes
 
-      - name: Install system dependencies
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libfontconfig1-dev \
-            libharfbuzz-dev \
-            libfribidi-dev \
-            libfreetype6-dev \
-            libpng-dev \
-            libtiff5-dev \
-            libjpeg-dev \
-            pkg-config
-          # Also install any additional system requirements from the package
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements(os = "ubuntu", package = "harlem"))')
-
-      - name: Install dependencies
-        run: |
-          install.packages("remotes")
-          remotes::install_deps(dependencies = TRUE)
-          # Try installing rcmdcheck with different approaches for Ubuntu devel
-          tryCatch({
-            install.packages("rcmdcheck")
-          }, error = function(e) {
-            cat("Failed to install rcmdcheck from CRAN, trying from GitHub...\n")
-            remotes::install_github("r-lib/rcmdcheck")
-          })
-          if (!requireNamespace("rcmdcheck", quietly = TRUE)) {
-            cat("Available packages:\n")
-            print(installed.packages()[, "Package"])
-            stop("Failed to install rcmdcheck")
-          }
-          cat("rcmdcheck version:", as.character(packageVersion("rcmdcheck")), "\n")
-        shell: Rscript {0}
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
 
       - name: Check
         env:
@@ -97,4 +61,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-          path: check 
+          path: check

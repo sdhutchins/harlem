@@ -40,54 +40,10 @@ jobs:
       - uses: r-lib/actions/setup-tinytex@v2
         if: needs.build-vignettes
 
-      - name: Query dependencies
-        run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
-        shell: Rscript {0}
-
-      - name: Cache R packages
-        if: runner.os != 'Windows'
-        uses: actions/cache@v3
+      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
-      - name: Install system dependencies
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libfontconfig1-dev \
-            libharfbuzz-dev \
-            libfribidi-dev \
-            libfreetype6-dev \
-            libpng-dev \
-            libtiff5-dev \
-            libjpeg-dev \
-            pkg-config
-          # Also install any additional system requirements from the package
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements(os = "ubuntu", package = "harlem"))')
-
-      - name: Install dependencies
-        run: |
-          remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
-          if (!requireNamespace("rcmdcheck", quietly = TRUE)) {
-            cat("Available packages:\n")
-            print(installed.packages()[, "Package"])
-            stop("Failed to install rcmdcheck")
-          }
-          cat("rcmdcheck version:", as.character(packageVersion("rcmdcheck")), "\n")
-        shell: Rscript {0}
+          extra-packages: any::rcmdcheck
+          needs: check
 
       - name: Session info
         run: |
