@@ -9,7 +9,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/sdhutchins/harlem/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/sdhutchins/harlem/blob/v0.0.1/DESCRIPTION)
 
 Hutchins S (2026). *harlem: Color Palettes Inspired by Harlem
 Renaissance Artists*. R package version 0.0.1,
